@@ -1,0 +1,24 @@
+== inventory
+
+Das Skript inventory.py soll ein kleines Warenlager verwalten.
+Man kann Artikel hinzufügen, verkaufen und Bestände abfragen.
+Es enthält allerdings Fehler.
+
+In demo.py findest Du eine Beispielanwendung, mit der Du herumspielen kannst.
+
+. Reproduzieren
+* Führe demo.py mehrfach aus.
+* Finde Beispiele, wo falsche Ergebnisse entstehen.
+. Analyse
+* Liste die Fehler im Code auf und erkläre, warum sie auftreten.
+. Fix
+* Korrigiere die Funktionen so, dass Deine gefundenen, dokumentierten Fehler nicht mehr auftreten
+. Tests
+* Schreibe ein kleines Testskript (tests.py), das verschiedene Szenarien prüft (zu viel verkaufen, unbekannter Artikel, mehrere Artikel).
+. Dokumentation
+* Schreibe eine README (max. 1 Seite) mit:
+** Dokumentiere Deine Analyse
+** Welche Befehle hast Du ausgeführt, um Fehler zu finden?
+** Welche Fragen musstest Du für einen Fix beantworten?
+** Dokumentiere, wie man das Programm benutzt
+
