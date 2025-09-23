@@ -10,7 +10,7 @@ class TestInventar(unittest.TestCase):
 
     def test_add_item_und_get_stock(self):
         inventory.add_item("Apfel", 10)
-        self.assertEqual(inventory.get_stock("Apfel"), 10)
+        self.assertEqual(inventory.items["Apfel"], 10)
 
     def test_add_item_return_true(self):
         result = inventory.add_item("Apfel", 10)
@@ -19,10 +19,10 @@ class TestInventar(unittest.TestCase):
 
     def test_add_item_existing_item_erhoeht_bestand(self):
         inventory.add_item("Apfel", 5)
-        self.assertEqual(inventory.get_stock("Apfel"), 5)
+        self.assertEqual(inventory.items["Apfel"], 5)
 
         inventory.add_item("Apfel", 3)
-        self.assertEqual(inventory.get_stock("Apfel"), 8)
+        self.assertEqual(inventory.items["Apfel"], 8)
 
     def test_add_item_falscher_name(self):
         inventory.add_item("Apfel", 5)
@@ -72,7 +72,7 @@ class TestInventar(unittest.TestCase):
         with self.assertRaises(ValueError) as cm:
             inventory.sell_item("Apfel", 5)
         self.assertEqual(str(cm.exception), "Fehler: 'Apfel' können nicht verkauft werden, Bestand zu niedrig.")
-        self.assertEqual(inventory.get_stock("Apfel"), 3)
+        self.assertEqual(inventory.items["Apfel"], 3)
 
     def test_sell_item_artikel_existiert_nicht(self):
         with self.assertRaises(ValueError) as cm:

@@ -10,7 +10,7 @@ print("Bestand Bananen:", inventory.get_stock("Bananen"))
 print("Bestand Birnen:", inventory.get_stock("Birnen"))
 print("Bestand Weintrauben:", inventory.get_stock("Weintrauben"))
 
-inventory.sell_item("Weintrauben", "Hallo")
+inventory.sell_item("Weintrauben", 4)
 inventory.sell_item("Apfel", 1)
 inventory.sell_item("Bananen", 5)
 inventory.sell_item("Birnen", 4)
