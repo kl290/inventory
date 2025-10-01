@@ -1,12 +1,17 @@
 # Globale Datenstruktur für das Lager
+
 items = {}  # key: Artikelname, value: Anzahl
 
 
 def add_item(name, qty):
     if not isinstance(name, str):
         raise ValueError(f"Fehler: Artikelname '{name}' muss ein String sein.")
+    if not name.strip():
+        raise ValueError("Fehler: Artikelname darf nicht leer sein oder nur aus Leerzeichen bestehen.")
     if not isinstance(qty, int):
-        raise ValueError(f"Fehler: Menge '{qty}' muss eine Zahl sein.")
+        raise ValueError("Fehler: Die Menge muss eine Zahl sein.")
+    if qty <= 0:
+        raise ValueError("Fehler: Die Menge muss größer als 0 sein.")
 
     if name in items:
         items[name] += qty
@@ -26,6 +31,9 @@ def sell_item(name, qty):
         raise ValueError(f"Fehler: '{name}' können nicht verkauft werden, Bestand zu niedrig.")
 
     items[name] -= qty
+    if items[name] == 0:
+        del items[name]
+
     return True
 
 

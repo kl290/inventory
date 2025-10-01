@@ -1,6 +1,6 @@
 import inventory
 
-inventory.add_item("Apfel", 10)
+inventory.add_item("Apfel", 1)
 inventory.add_item("Bananen", 10)
 inventory.add_item("Weintrauben", 10)
 inventory.add_item("Birnen", 4)
